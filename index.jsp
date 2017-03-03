@@ -1,29 +1,68 @@
-<%@page import="java.util.*"%>
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Resultat d'operation</title>
-	</head>
-	<%! List<String> produits = new ArrayList<String>();%>
-	<body>
-	<% 
-		String resultat = "";
-		if(request.getParameter("action").equals("consulter")){
-			if(produits.isEmpty()){
-				resultat = "Aucun produit dans le catalogue";
-			}else{
-				resultat = "Il y a " + produits.length + "produit(s) dans le catalogue : \n";
-				for(String prod : produits)
-					resultat += prod + "\n";
+		<title>Proprio a Proprio</title>
+		<style>
+			hmtl, body {
+				display : flex;
+				flex-direction : column;
+				height : 100%;
+				width : 99%;
 			}
-		}else{
-			if(request.getParameter("action").equals("ajouter"))
-		}
-	}
-		<h1>Resultat de l'operation : </h1>
-		<p>Operande a = <%=a%></br></p>
-		<p>Operation : <%=op%></br></p>
-		<p>Operande b = <%=b%></br></p>
-		<p><%=resultat%></p>
+			.bandeau, .recherche, .annonce, .container, .img_b, .img {
+				display : flex;
+			}
+			.bandeau {
+				flex-direction : column;
+				flex-wrap : nowrap;
+				height : 75px;
+				border : 1px blue solid;
+			}
+			.recherche {
+				flex-direction : row;
+				height : 75px;
+				border : 1px red solid;
+			}
+			.container {
+				flex-direction : column;
+				align-items: center;
+			}
+			.annonce {
+				margin-top : 5px;
+				margin-bottom : 5px;
+				height : 300 px;
+				width : 70%;
+				border : 1px black solid;
+			}
+		</style>
+	</head>
+	
+	<body>
+	<div class='bandeau'>
+		<div class='img_b'>
+			<img src='./kdbkzje.jpg' class='img'>
+		</div>
+		<div class='img_b'>
+			<img src='./kdbkzje.jpg' class='img'>
+		</div>
+		<div class='img_b'>
+			<img src='./kdbkzje.jpg' class='img'>
+		</div>
+	
+	</div>
+	<div class='recherche'>
+	<p>i have a pen<br>i have a apple<br> pine-apple pen</p>
+	</div>
+	<div class='container'>
+		<div class='annonce'>
+		<p>hello <br>from <br>the <br>other<br> diiiiiiiiv<br>I <br> must<br> have<br> an <br>annoncement<br></p>
+		</div>
+		<div class='annonce'>
+		<p>hello <br>from <br>the <br>other<br> diiiiiiiiv<br>I <br> must<br> have<br> an <br>annoncement<br></p>
+		</div>
+		<div class='annonce'>
+		<p>hello <br>from <br>the <br>other<br> diiiiiiiiv<br>I <br> must<br> have<br> an <br>annoncement<br></p>
+		</div>
+	</div>
 	</body>
 </html>
